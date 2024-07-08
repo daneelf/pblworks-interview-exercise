@@ -1,8 +1,7 @@
 import { EditProjectForm } from '@/app/projects/[projectId]/components/EditProjectForm/EditProjectForm'
 import { prisma } from '@/prisma/prisma'
-import { Stack } from '@mui/material'
-import { Prisma } from '@prisma/client'
 import { notFound } from 'next/navigation'
+import Header from '@/app/components/Header';
 
 export default async function Page({
   params,
@@ -19,5 +18,10 @@ export default async function Page({
     return notFound()
   }
 
-  return <EditProjectForm project={project} />
+  return (
+    <>
+      <Header projectTitle={project.title} />
+      <EditProjectForm project={project} />
+    </>
+  )
 }
