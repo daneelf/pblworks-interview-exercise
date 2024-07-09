@@ -12,6 +12,9 @@ const createJestConfig = nextJest({
 })
 
 const config: Config = {
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
