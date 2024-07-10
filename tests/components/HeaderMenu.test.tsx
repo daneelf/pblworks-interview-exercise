@@ -1,22 +1,17 @@
 import '@testing-library/jest-dom'
-import {
-  render,
-  screen,
-  fireEvent,
-  waitForElementToBeRemoved,
-} from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 
-import HeaderMenu from '@/app/components/HeaderMenu'
+import HeaderAvatarMenu from '@/app/components/HeaderAvatarMenu'
 
-describe('HeaderMenu', () => {
+describe('HeaderAvatarMenu', () => {
   it('renders the avatar', () => {
-    render(<HeaderMenu />)
+    render(<HeaderAvatarMenu />)
     const avatarElement = screen.getByTestId('header-menu-avatar')
     expect(avatarElement).toBeInTheDocument()
   })
 
   it('opens the menu when the avatar is clicked', () => {
-    render(<HeaderMenu />)
+    render(<HeaderAvatarMenu />)
     const avatarElement = screen.getByTestId('header-menu-avatar')
     fireEvent.click(avatarElement)
     const menuElement = screen.getByRole('menu')
@@ -24,7 +19,7 @@ describe('HeaderMenu', () => {
   })
 
   it('renders the menu items with correct links', () => {
-    render(<HeaderMenu />)
+    render(<HeaderAvatarMenu />)
     const avatarElement = screen.getByTestId('header-menu-avatar')
     fireEvent.click(avatarElement)
     const menuItemElements = screen.getAllByRole('menuitem')

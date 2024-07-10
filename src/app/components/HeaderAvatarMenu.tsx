@@ -3,11 +3,11 @@ import { useState } from 'react'
 import { Avatar, Menu, MenuItem } from '@mui/material'
 import Link from 'next/link'
 
-interface HeaderMenuProps {
+interface HeaderAvatarMenuProps {
   onClose?: () => void
 }
 
-const HeaderMenu = ({ onClose }: HeaderMenuProps) => {
+const HeaderAvatarMenu = ({ onClose }: HeaderAvatarMenuProps) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -20,7 +20,7 @@ const HeaderMenu = ({ onClose }: HeaderMenuProps) => {
       onClose()
     }
   }
-  
+
   return (
     <>
       <Avatar
@@ -52,4 +52,4 @@ const HeaderMenu = ({ onClose }: HeaderMenuProps) => {
   )
 }
 
-export default HeaderMenu
+export default HeaderAvatarMenu

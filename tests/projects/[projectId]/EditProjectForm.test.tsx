@@ -43,7 +43,7 @@ describe('EditProjectForm', () => {
     jest.clearAllMocks();
   });
 
-  test('renders form fields with initial project data', async () => {
+  it('renders form fields with initial project data', async () => {
     renderWithTheme(<EditProjectForm project={mockProject} />);
   
     const titleInput = screen.getByTestId('project-title-input').querySelector('input') as HTMLInputElement;
@@ -55,7 +55,7 @@ describe('EditProjectForm', () => {
     expect(descriptionInput.value).toBe('Test Description');
   });
 
-  test('updates form fields on user input', async () => {
+  it('updates form fields on user input', async () => {
     renderWithTheme(<EditProjectForm project={mockProject} />);
     
     const titleInput = screen.getByTestId('project-title-input').querySelector('input') as HTMLInputElement;
@@ -73,7 +73,7 @@ describe('EditProjectForm', () => {
     expect(descriptionInput.value).toBe('Updated Description');
   });
 
-  test('calls updateProject after user input and debounce', async () => {
+  it('calls updateProject after user input and debounce', async () => {
     mockUpdateProject.mockResolvedValue(mockProject);
     renderWithTheme(<EditProjectForm project={mockProject} />);
     
@@ -94,8 +94,8 @@ describe('EditProjectForm', () => {
     });
   });
 
-  test('shows error message after failed save', async () => {
-    // Mock console.error to prevent the error from being logged during the test
+  it('shows error message after failed save', async () => {
+    // Mock console.error to prevent the error from being logged during the it
     const originalError = console.error;
     console.error = jest.fn();
   
@@ -113,7 +113,7 @@ describe('EditProjectForm', () => {
       expect(screen.getByText('Failed to save changes. Please try again later.')).toBeInTheDocument();
     });
   
-    // Restore the original console.error after the test
+    // Restore the original console.error after the it
     console.error = originalError;
   });
 });

@@ -1,7 +1,7 @@
 import { AppBar, Toolbar, Typography, Box } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
-import HeaderMenu from './HeaderMenu'
+import HeaderAvatarMenu from '@/app/components/HeaderAvatarMenu'
 
 interface HeaderProps {
   projectTitle?: string
@@ -31,7 +31,7 @@ const Header = ({ projectTitle }: HeaderProps) => {
             {projectTitle || ''}
           </Typography>
         </Box>
-        <HeaderMenu />
+        <HeaderAvatarMenu />
       </Toolbar>
     </AppBar>
   )
